@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+
+# Neovim runtime artifacts (should not be committed)
+# Keep lazy-lock.json committed for reproducibility.
+
+nvim/plugged/
+nvim/lazy/
+nvim/shada/
+nvim/swap/
+nvim/undo/
+
+# netrw history
+nvim/.netrwhist
