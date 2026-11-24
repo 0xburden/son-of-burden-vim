@@ -22,6 +22,8 @@ vim.opt.laststatus = 3
 vim.opt.showcmd = true
 vim.opt.ttyfast = true
 vim.opt.hidden = true
+vim.opt.foldmethod = "manual"
+vim.opt.foldenable = false
 
 -- Wildmenu (command completion)
 vim.opt.wildmenu = true

@@ -3,7 +3,7 @@
 --
 -- NOTE: nvim-treesitter recently changed its public API.
 -- There is no `require('nvim-treesitter.configs')` anymore.
--- Core features (highlight/folds) are provided by Neovim itself and must be
+-- Tree-sitter highlighting is provided by Neovim itself and must be
 -- enabled (e.g. via a FileType autocmd).
 -- ===========================
 
@@ -45,18 +45,6 @@ return {
         callback = function(ev)
           -- Highlighting (provided by Neovim)
           pcall(vim.treesitter.start, ev.buf)
-
-          -- Folds (provided by Neovim)
-          vim.api.nvim_set_option_value(
-            "foldmethod",
-            "expr",
-            { win = 0 }
-          )
-          vim.api.nvim_set_option_value(
-            "foldexpr",
-            "v:lua.vim.treesitter.foldexpr()",
-            { win = 0 }
-          )
 
           -- Indentation (provided by nvim-treesitter)
           vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
